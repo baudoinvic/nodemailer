@@ -9,12 +9,12 @@ const app = express();
 console.log("Email User:", process.env.EMAIL_USER);
 console.log("Email Pass:", process.env.EMAIL_PASS);
 
-// Middleware
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
-// Route
+
 app.get("/", (req, res) => {
   res.send("Home Page");
 });
