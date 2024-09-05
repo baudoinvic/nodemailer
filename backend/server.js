@@ -6,8 +6,8 @@ const sendEmail = require("./utils/sendEmail");
 
 const app = express();
 
-console.log("Email User:", process.env.EMAIL_USER);
-console.log("Email Pass:", process.env.EMAIL_PASS);
+// console.log("Email User:", process.env.EMAIL_USER);
+// console.log("Email Pass:", process.env.EMAIL_PASS);
 
 
 app.use(express.json());
