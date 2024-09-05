@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS for react-toastify
+import "react-toastify/dist/ReactToastify.css"; 
 
 function App() {
   const [email, setEmail] = useState("");
@@ -20,7 +20,7 @@ function App() {
       );
       console.log(response.data);
 
-      // Show success toast
+    
       toast.success("Email sent successfully!");
     } catch (error) {
       console.error(error);
