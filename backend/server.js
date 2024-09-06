@@ -1,3 +1,5 @@
+
+
 const dotenv = require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -6,14 +8,9 @@ const sendEmail = require("./utils/sendEmail");
 
 const app = express();
 
-// console.log("Email User:", process.env.EMAIL_USER);
-// console.log("Email Pass:", process.env.EMAIL_PASS);
-
-
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
-
 
 app.get("/", (req, res) => {
   res.send("Home Page");
@@ -21,16 +18,16 @@ app.get("/", (req, res) => {
 
 app.post("/api/sendemail", async (req, res) => {
   const { email } = req.body;
-
   try {
     const send_to = email;
     const sent_from = process.env.EMAIL_USER;
     const reply_to = email;
-    const subject = "Thank You Message for your message";
+    const subject = "New Subscription";
     const message = `
-        <h3>We appreciate for your time</h3>
-        <p>to subscribe our news letter</p>
-        <p>Regards...</p>
+      <h3>New Subscriber</h3>
+      <p>A new user has subscribed to your newsletter:</p>
+      <p>Email: ${email}</p>
+      <p>Thank you for managing your subscriptions.</p>
     `;
 
     await sendEmail(subject, message, send_to, sent_from, reply_to);

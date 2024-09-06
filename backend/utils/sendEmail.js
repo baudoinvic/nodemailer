@@ -1,3 +1,5 @@
+
+
 const nodemailer = require("nodemailer");
 
 const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
@@ -14,14 +16,13 @@ const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
   });
 
   const options = {
-    from: "",
-    to: " baudoinvicbolingo@gmail.com",
+    from: `"${send_to}" <${process.env.EMAIL_USER}>`,
+    to: process.env.EMAIL_USER,
     replyTo: reply_to,
     subject: subject,
     html: message,
   };
 
- 
   transporter.sendMail(options, function (err, info) {
     if (err) {
       console.log(err);
