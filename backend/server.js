@@ -30,7 +30,7 @@ app.post("/api/sendemail", async (req, res) => {
     const message = `
         <h3>Hello Zino</h3>
         <p>Thank for your YouTube Tutorials</p>
-      
+        <p>Regards...</p>
     `;
 
     await sendEmail(subject, message, send_to, sent_from, reply_to);
