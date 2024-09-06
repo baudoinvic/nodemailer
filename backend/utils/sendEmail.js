@@ -14,8 +14,8 @@ const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
   });
 
   const options = {
-    from: sent_from,
-    to: send_to,
+    from: '',
+    to:' baudoinvicbolingo@gmail.com',
     replyTo: reply_to,
     subject: subject,
     html: message,
