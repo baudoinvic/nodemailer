@@ -25,7 +25,7 @@ function App() {
     } catch (error) {
       console.error(error);
 
-      // Show error toast
+   
       toast.error("Failed to send email. Please try again.");
     }
   };
