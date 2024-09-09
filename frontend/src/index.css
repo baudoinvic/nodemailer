@@ -104,7 +104,7 @@ section {
   column-gap: 1rem;
 }
 
-/* Center All */
+
 .--center-all {
   display: flex;
   justify-content: center;
@@ -316,7 +316,7 @@ p {
   background: #28a745;
 }
 
-/* Background */
+
 .--bg-light {
   background: #fff;
 }
