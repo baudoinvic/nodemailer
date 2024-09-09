@@ -90,7 +90,7 @@ section {
   min-height: 100vh;
 }
 
-/* Grid */
+
 .--grid-15 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
