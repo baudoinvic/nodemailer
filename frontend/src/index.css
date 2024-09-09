@@ -198,7 +198,7 @@ p {
   text-align: center;
 }
 
-/* Card */
+
 .--card {
   border: 1px solid transparent;
   border-radius: 5px;
@@ -206,7 +206,7 @@ p {
   overflow: hidden;
 }
 
-/* Margin */
+
 .--m {
   margin: 1rem;
 }
