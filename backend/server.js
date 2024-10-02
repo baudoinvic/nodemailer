@@ -77,15 +77,15 @@ app.get("/", (req, res) => {
  *         description: Server error
  */
 app.post("/api/sendemail", async (req, res) => {
-  const { email } = req.body;
+  const { email,message } = req.body;
   try {
-    const send_to = email;
-    const sent_from = process.env.EMAIL_USER;
-    const reply_to = email;
-    const subject = "New Subscription";
-    const message = `
+       const send_to = process.env.EMAIL_USER; // Your email to receive the message
+       const sent_from = email; // The user's email who sent the message
+       const reply_to = email;
+       const subject = "";
+       const content = `
       <p>new subscribe :</p>
-      <p> ${email}</p>
+      <p> ${message}</p>
       <p>has subscribing to our newsletter.</p>
     `;
 
