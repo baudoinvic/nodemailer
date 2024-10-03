@@ -143,8 +143,7 @@ app.post("/api/sendemail", async (req, res) => {
 app.post("/api/contact", async (req, res) => {
   const { firstname, lastname, email, message } = req.body;
   try {
-    const send_to = process.env.EMAIL_USER; // Your email to receive the message
-    const sent_from = email; // The user's email who sent the message
+    const send_to = process.env.EMAIL_USER; 
     const reply_to = email;
     const subject = "";
     const content = `
