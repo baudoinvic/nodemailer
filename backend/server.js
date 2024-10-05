@@ -28,7 +28,7 @@ const swaggerOptions = {
       },
       servers: [
         {
-          url: "https://nodemailer-snowy.vercel.app/",
+          url: "http://localhost:5000",
         },
       ],
     },
