@@ -2,14 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "./server.js",
+      "src": "api/*.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/"
+      "src": "/api/sendemail",
+      "dest": "/api/sendemail.js"
+    },
+    {
+      "src": "/api/contact",
+      "dest": "/api/contact.js"
     }
   ]
 }
