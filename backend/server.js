@@ -28,7 +28,7 @@ const swaggerOptions = {
       },
       servers: [
         {
-          url: "https://nodemailer-eight.vercel.app",
+          url: "http://localhost:5000",
         },
       ],
     },
