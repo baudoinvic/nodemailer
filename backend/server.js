@@ -140,46 +140,19 @@ app.post("/api/sendemail", async (req, res) => {
  *       500:
  *         description: Server error
  */
-// app.post("/api/contact", async (req, res) => {
-//   const { firstname, lastname, email, message } = req.body;
-//   try {
-//     const send_to = process.env.EMAIL_USER; 
-//     const reply_to = email;
-//     const subject = "";
-//     const content = `
-
-//       <p><strong>Message:</strong></p>
-//       <p>${message}</p>
-//     `;
-
-//     await sendEmail(subject, content, send_to, sent_from, reply_to);
-//     res.status(200).json({ success: true, message: "Message Sent" });
-//   } catch (error) {
-//     res.status(500).json({ success: false, error: error.message });
-//   }
-// });
-
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}...`);
-// });
-
-
 app.post("/api/contact", async (req, res) => {
   const { firstname, lastname, email, message } = req.body;
   try {
-    const send_to = process.env.EMAIL_USER;
-    const sent_from = process.env.EMAIL_USER; // Define sent_from
+    const send_to = process.env.EMAIL_USER; 
     const reply_to = email;
-    const subject = "New Contact Form Submission";
+    const subject = "";
     const content = `
-      <p><strong>From:</strong> ${firstname} ${lastname}</p>
-      <p><strong>Email:</strong> ${email}</p>
+
       <p><strong>Message:</strong></p>
       <p>${message}</p>
     `;
 
-    await sendEmail(subject, content, send_to, sent_from, reply_to);
+    await sendEmail(subject, content, send_to, reply_to);
     res.status(200).json({ success: true, message: "Message Sent" });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
