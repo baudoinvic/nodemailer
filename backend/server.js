@@ -28,7 +28,7 @@ const swaggerOptions = {
       },
       servers: [
         {
-          url: "http://localhost:5000",
+          url: "https://nodemailer-1-traiteur.onrender.com",
         },
       ],
     },
@@ -152,7 +152,7 @@ app.post("/api/contact", async (req, res) => {
       <p>${message}</p>
     `;
 
-    await sendEmail(subject, content, send_to, sent_from, reply_to);
+    await sendEmail(subject, content, send_to, reply_to);
     res.status(200).json({ success: true, message: "Message Sent" });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
